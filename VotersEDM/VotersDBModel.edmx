@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VotersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChangeLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityName" Type="varchar" MaxLength="128" />
+          <Property Name="PropertyName" Type="varchar" MaxLength="128" />
+          <Property Name="PrimaryKeyValue" Type="varchar" MaxLength="50" />
+          <Property Name="OldValue" Type="varchar" MaxLength="255" />
+          <Property Name="NewValue" Type="varchar" MaxLength="255" />
+          <Property Name="DateChanged" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ncvoter40">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="county_id" Type="varchar" MaxLength="50" />
+          <Property Name="county_desc" Type="varchar" MaxLength="50" />
+          <Property Name="voter_reg_num" Type="varchar" MaxLength="50" />
+          <Property Name="status_cd" Type="varchar" MaxLength="50" />
+          <Property Name="voter_status_desc" Type="varchar" MaxLength="50" />
+          <Property Name="reason_cd" Type="varchar" MaxLength="50" />
+          <Property Name="voter_status_reason_desc" Type="varchar" MaxLength="255" />
+          <Property Name="absent_ind" Type="varchar" MaxLength="50" />
+          <Property Name="name_prefx_cd" Type="varchar" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" />
+          <Property Name="middle_name" Type="varchar" MaxLength="50" />
+          <Property Name="name_suffix_lbl" Type="varchar" MaxLength="50" />
+          <Property Name="res_street_address" Type="varchar" MaxLength="50" />
+          <Property Name="res_city_desc" Type="varchar" MaxLength="50" />
+          <Property Name="state_cd" Type="varchar" MaxLength="50" />
+          <Property Name="zip_code" Type="varchar" MaxLength="50" />
+          <Property Name="mail_addr1" Type="varchar" MaxLength="50" />
+          <Property Name="mail_addr2" Type="varchar" MaxLength="50" />
+          <Property Name="mail_addr3" Type="varchar" MaxLength="50" />
+          <Property Name="mail_addr4" Type="varchar" MaxLength="50" />
+          <Property Name="mail_city" Type="varchar" MaxLength="50" />
+          <Property Name="mail_state" Type="varchar" MaxLength="50" />
+          <Property Name="mail_zipcode" Type="varchar" MaxLength="50" />
+          <Property Name="full_phone_number" Type="varchar" MaxLength="50" />
+          <Property Name="race_code" Type="varchar" MaxLength="50" />
+          <Property Name="ethnic_code" Type="varchar" MaxLength="50" />
+          <Property Name="party_cd" Type="varchar" MaxLength="50" />
+          <Property Name="gender_code" Type="varchar" MaxLength="50" />
+          <Property Name="birth_age" Type="varchar" MaxLength="50" />
+          <Property Name="birth_state" Type="varchar" MaxLength="50" />
+          <Property Name="drivers_lic" Type="varchar" MaxLength="50" />
+          <Property Name="registr_dt" Type="varchar" MaxLength="50" />
+          <Property Name="precinct_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="precinct_desc" Type="varchar" MaxLength="50" />
+          <Property Name="municipality_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="municipality_desc" Type="varchar" MaxLength="50" />
+          <Property Name="ward_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="ward_desc" Type="varchar" MaxLength="50" />
+          <Property Name="cong_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="super_court_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="judic_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="nc_senate_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="nc_house_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="county_commiss_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="county_commiss_desc" Type="varchar" MaxLength="50" />
+          <Property Name="township_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="township_desc" Type="varchar" MaxLength="50" />
+          <Property Name="school_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="school_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="fire_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="fire_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="water_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="water_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="sewer_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="sewer_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="sanit_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="sanit_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="rescue_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="rescue_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="munic_dist_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="munic_dist_desc" Type="varchar" MaxLength="50" />
+          <Property Name="dist_1_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="dist_1_desc" Type="varchar" MaxLength="50" />
+          <Property Name="dist_2_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="dist_2_desc" Type="varchar" MaxLength="50" />
+          <Property Name="confidential_ind" Type="varchar" MaxLength="50" />
+          <Property Name="birth_year" Type="varchar" MaxLength="50" />
+          <Property Name="ncid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vtd_abbrv" Type="varchar" MaxLength="50" />
+          <Property Name="vtd_desc" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VotersDBModelStoreContainer">
+          <EntitySet Name="ChangeLog" EntityType="Self.ChangeLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ncvoter40" EntityType="Self.ncvoter40" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VotersDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VotersDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChangeLogs" EntityType="VotersDBModel.ChangeLog" />
+          <EntitySet Name="ncvoter40" EntityType="VotersDBModel.ncvoter40" />
+        </EntityContainer>
+        <EntityType Name="ChangeLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="EntityName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryKeyValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OldValue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NewValue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateChanged" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ncvoter40">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="county_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="county_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="voter_reg_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_cd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="voter_status_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="reason_cd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="voter_status_reason_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="absent_ind" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name_prefx_cd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name_suffix_lbl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="res_street_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="res_city_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_cd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zip_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_addr1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_addr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_addr3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_addr4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail_zipcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="full_phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="race_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ethnic_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="party_cd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birth_age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birth_state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="drivers_lic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="registr_dt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precinct_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precinct_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="municipality_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="municipality_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ward_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ward_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cong_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="super_court_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="judic_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nc_senate_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nc_house_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="county_commiss_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="county_commiss_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="township_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="township_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="school_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="school_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fire_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fire_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="water_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="water_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sewer_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sewer_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sanit_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sanit_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rescue_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rescue_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="munic_dist_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="munic_dist_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dist_1_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dist_1_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dist_2_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dist_2_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="confidential_ind" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birth_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ncid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vtd_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vtd_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VotersDBModelStoreContainer" CdmEntityContainer="VotersDBEntities">
+        <EntitySetMapping Name="ChangeLogs">
+            <EntityTypeMapping TypeName="VotersDBModel.ChangeLog">
+              <MappingFragment StoreEntitySet="ChangeLog">
+                <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+                <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="PrimaryKeyValue" ColumnName="PrimaryKeyValue" />
+                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+                <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ncvoter40">
+            <EntityTypeMapping TypeName="VotersDBModel.ncvoter40">
+              <MappingFragment StoreEntitySet="ncvoter40">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="vtd_desc" ColumnName="vtd_desc" />
+                <ScalarProperty Name="vtd_abbrv" ColumnName="vtd_abbrv" />
+                <ScalarProperty Name="ncid" ColumnName="ncid" />
+                <ScalarProperty Name="birth_year" ColumnName="birth_year" />
+                <ScalarProperty Name="confidential_ind" ColumnName="confidential_ind" />
+                <ScalarProperty Name="dist_2_desc" ColumnName="dist_2_desc" />
+                <ScalarProperty Name="dist_2_abbrv" ColumnName="dist_2_abbrv" />
+                <ScalarProperty Name="dist_1_desc" ColumnName="dist_1_desc" />
+                <ScalarProperty Name="dist_1_abbrv" ColumnName="dist_1_abbrv" />
+                <ScalarProperty Name="munic_dist_desc" ColumnName="munic_dist_desc" />
+                <ScalarProperty Name="munic_dist_abbrv" ColumnName="munic_dist_abbrv" />
+                <ScalarProperty Name="rescue_dist_desc" ColumnName="rescue_dist_desc" />
+                <ScalarProperty Name="rescue_dist_abbrv" ColumnName="rescue_dist_abbrv" />
+                <ScalarProperty Name="sanit_dist_desc" ColumnName="sanit_dist_desc" />
+                <ScalarProperty Name="sanit_dist_abbrv" ColumnName="sanit_dist_abbrv" />
+                <ScalarProperty Name="sewer_dist_desc" ColumnName="sewer_dist_desc" />
+                <ScalarProperty Name="sewer_dist_abbrv" ColumnName="sewer_dist_abbrv" />
+                <ScalarProperty Name="water_dist_desc" ColumnName="water_dist_desc" />
+                <ScalarProperty Name="water_dist_abbrv" ColumnName="water_dist_abbrv" />
+                <ScalarProperty Name="fire_dist_desc" ColumnName="fire_dist_desc" />
+                <ScalarProperty Name="fire_dist_abbrv" ColumnName="fire_dist_abbrv" />
+                <ScalarProperty Name="school_dist_desc" ColumnName="school_dist_desc" />
+                <ScalarProperty Name="school_dist_abbrv" ColumnName="school_dist_abbrv" />
+                <ScalarProperty Name="township_desc" ColumnName="township_desc" />
+                <ScalarProperty Name="township_abbrv" ColumnName="township_abbrv" />
+                <ScalarProperty Name="county_commiss_desc" ColumnName="county_commiss_desc" />
+                <ScalarProperty Name="county_commiss_abbrv" ColumnName="county_commiss_abbrv" />
+                <ScalarProperty Name="nc_house_abbrv" ColumnName="nc_house_abbrv" />
+                <ScalarProperty Name="nc_senate_abbrv" ColumnName="nc_senate_abbrv" />
+                <ScalarProperty Name="judic_dist_abbrv" ColumnName="judic_dist_abbrv" />
+                <ScalarProperty Name="super_court_abbrv" ColumnName="super_court_abbrv" />
+                <ScalarProperty Name="cong_dist_abbrv" ColumnName="cong_dist_abbrv" />
+                <ScalarProperty Name="ward_desc" ColumnName="ward_desc" />
+                <ScalarProperty Name="ward_abbrv" ColumnName="ward_abbrv" />
+                <ScalarProperty Name="municipality_desc" ColumnName="municipality_desc" />
+                <ScalarProperty Name="municipality_abbrv" ColumnName="municipality_abbrv" />
+                <ScalarProperty Name="precinct_desc" ColumnName="precinct_desc" />
+                <ScalarProperty Name="precinct_abbrv" ColumnName="precinct_abbrv" />
+                <ScalarProperty Name="registr_dt" ColumnName="registr_dt" />
+                <ScalarProperty Name="drivers_lic" ColumnName="drivers_lic" />
+                <ScalarProperty Name="birth_state" ColumnName="birth_state" />
+                <ScalarProperty Name="birth_age" ColumnName="birth_age" />
+                <ScalarProperty Name="gender_code" ColumnName="gender_code" />
+                <ScalarProperty Name="party_cd" ColumnName="party_cd" />
+                <ScalarProperty Name="ethnic_code" ColumnName="ethnic_code" />
+                <ScalarProperty Name="race_code" ColumnName="race_code" />
+                <ScalarProperty Name="full_phone_number" ColumnName="full_phone_number" />
+                <ScalarProperty Name="mail_zipcode" ColumnName="mail_zipcode" />
+                <ScalarProperty Name="mail_state" ColumnName="mail_state" />
+                <ScalarProperty Name="mail_city" ColumnName="mail_city" />
+                <ScalarProperty Name="mail_addr4" ColumnName="mail_addr4" />
+                <ScalarProperty Name="mail_addr3" ColumnName="mail_addr3" />
+                <ScalarProperty Name="mail_addr2" ColumnName="mail_addr2" />
+                <ScalarProperty Name="mail_addr1" ColumnName="mail_addr1" />
+                <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+                <ScalarProperty Name="state_cd" ColumnName="state_cd" />
+                <ScalarProperty Name="res_city_desc" ColumnName="res_city_desc" />
+                <ScalarProperty Name="res_street_address" ColumnName="res_street_address" />
+                <ScalarProperty Name="name_suffix_lbl" ColumnName="name_suffix_lbl" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="name_prefx_cd" ColumnName="name_prefx_cd" />
+                <ScalarProperty Name="absent_ind" ColumnName="absent_ind" />
+                <ScalarProperty Name="voter_status_reason_desc" ColumnName="voter_status_reason_desc" />
+                <ScalarProperty Name="reason_cd" ColumnName="reason_cd" />
+                <ScalarProperty Name="voter_status_desc" ColumnName="voter_status_desc" />
+                <ScalarProperty Name="status_cd" ColumnName="status_cd" />
+                <ScalarProperty Name="voter_reg_num" ColumnName="voter_reg_num" />
+                <ScalarProperty Name="county_desc" ColumnName="county_desc" />
+                <ScalarProperty Name="county_id" ColumnName="county_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
