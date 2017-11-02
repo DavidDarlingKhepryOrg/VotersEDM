@@ -11,11 +11,9 @@ namespace VotersEDM
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class ChangeLog
     {
-        [Key]
         public int Id { get; set; }
         public string EntityName { get; set; }
         public string PropertyName { get; set; }
@@ -23,5 +21,6 @@ namespace VotersEDM
         public string OldValue { get; set; }
         public string NewValue { get; set; }
         public Nullable<System.DateTime> DateChanged { get; set; }
+        public string Action { get; set; }
     }
 }

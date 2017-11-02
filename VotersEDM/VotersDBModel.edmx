@@ -11,6 +11,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EntityName" Type="varchar" MaxLength="128" />
+          <Property Name="Action" Type="varchar" MaxLength="10" />
           <Property Name="PropertyName" Type="varchar" MaxLength="128" />
           <Property Name="PrimaryKeyValue" Type="varchar" MaxLength="50" />
           <Property Name="OldValue" Type="varchar" MaxLength="255" />
@@ -117,6 +118,7 @@
           <Property Name="OldValue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="NewValue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="DateChanged" Type="DateTime" Precision="3" />
+          <Property Name="Action" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ncvoter40">
           <Key>
@@ -204,6 +206,7 @@
         <EntitySetMapping Name="ChangeLogs">
             <EntityTypeMapping TypeName="VotersDBModel.ChangeLog">
               <MappingFragment StoreEntitySet="ChangeLog">
+                <ScalarProperty Name="Action" ColumnName="Action" />
                 <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
                 <ScalarProperty Name="NewValue" ColumnName="NewValue" />
                 <ScalarProperty Name="OldValue" ColumnName="OldValue" />
