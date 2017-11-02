@@ -11,7 +11,8 @@ namespace VotersEDM
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ncvoter40
     {
         public string county_id { get; set; }
@@ -85,6 +86,7 @@ namespace VotersEDM
         public string ncid { get; set; }
         public string vtd_abbrv { get; set; }
         public string vtd_desc { get; set; }
-        public long ID { get; set; }
+        [Key]
+        public System.Guid ID { get; set; }
     }
 }

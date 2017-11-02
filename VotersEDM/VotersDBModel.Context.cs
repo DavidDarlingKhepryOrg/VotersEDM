@@ -12,10 +12,11 @@ namespace VotersEDM
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class VotersDBEntities : DbContext
     {
-        public VotersDBEntities() : base("name=VotersDBEntities")
+        public VotersDBEntities()
+            : base("name=VotersDBEntities")
         {
         }
     
@@ -23,7 +24,7 @@ namespace VotersEDM
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<ChangeLog> ChangeLogs { get; set; }
         public virtual DbSet<ncvoter40> ncvoter40 { get; set; }
     }

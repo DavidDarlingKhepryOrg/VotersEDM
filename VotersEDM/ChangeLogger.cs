@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -44,6 +46,8 @@ namespace ChangeLoggers
             {
                 var entityName = insert.Entity.GetType().Name;
                 var primaryKey = GetPrimaryKeyValue(caller, insert);
+                var primaryKeyName = GetPrimaryKeyName(caller, insert);
+                primaryKey = insert.CurrentValues[primaryKeyName];
 
                 foreach (var prop in insert.CurrentValues.PropertyNames)
                 {
@@ -141,10 +145,14 @@ namespace ChangeLoggers
                 .Where(p => p.State == EntityState.Deleted).ToList();
             var now = DateTime.UtcNow;
 
+
             foreach (var insert in insertedEntities)
             {
                 var entityName = insert.Entity.GetType().Name;
+                var primaryKeyName = GetPrimaryKeyName(caller, insert);
+                insert.CurrentValues[primaryKeyName] = Guid.NewGuid();
                 var primaryKey = GetPrimaryKeyValue(caller, insert);
+                primaryKey = insert.CurrentValues[primaryKeyName];
 
                 foreach (var prop in insert.CurrentValues.PropertyNames)
                 {
@@ -215,6 +223,26 @@ namespace ChangeLoggers
             }
 
             return changeLogs;
+        }
+
+        private String GetPrimaryKeyName(
+            DbContext caller,
+            DbEntityEntry entry,
+            String defaultPrimaryKeyName = "ID")
+        {
+
+            var objectStateEntry = ((IObjectContextAdapter)caller).ObjectContext.ObjectStateManager.GetObjectStateEntry(entry.Entity);
+            var primaryKeyName = String.Empty;
+            if (objectStateEntry.EntityKey.EntityKeyValues != null && objectStateEntry.EntityKey.EntityKeyValues.Length > 0)
+            {
+                primaryKeyName = objectStateEntry.EntityKey.EntityKeyValues[0].Key;
+            }
+            else
+            {
+                primaryKeyName = defaultPrimaryKeyName;
+            }
+
+            return primaryKeyName;
         }
 
         private object GetPrimaryKeyValue(

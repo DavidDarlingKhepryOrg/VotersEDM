@@ -93,7 +93,7 @@
           <Property Name="ncid" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="vtd_abbrv" Type="varchar" MaxLength="50" />
           <Property Name="vtd_desc" Type="varchar" MaxLength="50" />
-          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="None" />
         </EntityType>
         <EntityContainer Name="VotersDBModelStoreContainer">
           <EntitySet Name="ChangeLog" EntityType="Self.ChangeLog" Schema="dbo" store:Type="Tables" />
@@ -195,7 +195,7 @@
           <Property Name="ncid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="vtd_abbrv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="vtd_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

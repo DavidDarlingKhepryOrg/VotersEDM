@@ -38,13 +38,13 @@ namespace VotersEDM.Controllers
 
         // GET: odata/ncvoter40(5)
         [EnableQuery]
-        public SingleResult<ncvoter40> Getncvoter40([FromODataUri] long key)
+        public SingleResult<ncvoter40> Getncvoter40([FromODataUri] Guid key)
         {
             return SingleResult.Create(db.ncvoter40.Where(ncvoter40 => ncvoter40.ID == key));
         }
 
         // PUT: odata/ncvoter40(5)
-        public async Task<IHttpActionResult> Put([FromODataUri] long key, Delta<ncvoter40> patch)
+        public async Task<IHttpActionResult> Put([FromODataUri] Guid key, Delta<ncvoter40> patch)
         {
             Validate(patch.GetEntity());
 
@@ -88,6 +88,8 @@ namespace VotersEDM.Controllers
                 return BadRequest(ModelState);
             }
 
+            
+            ncvoter40.ID = Guid.NewGuid();  //added by developer
             db.ncvoter40.Add(ncvoter40);
             await db.SaveChangesAsync();
 
@@ -96,7 +98,7 @@ namespace VotersEDM.Controllers
 
         // PATCH: odata/ncvoter40(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public async Task<IHttpActionResult> Patch([FromODataUri] long key, Delta<ncvoter40> patch)
+        public async Task<IHttpActionResult> Patch([FromODataUri] Guid key, Delta<ncvoter40> patch)
         {
             Validate(patch.GetEntity());
 
@@ -133,7 +135,7 @@ namespace VotersEDM.Controllers
         }
 
         // DELETE: odata/ncvoter40(5)
-        public async Task<IHttpActionResult> Delete([FromODataUri] long key)
+        public async Task<IHttpActionResult> Delete([FromODataUri] Guid key)
         {
             ncvoter40 ncvoter40 = await db.ncvoter40.FindAsync(key);
             if (ncvoter40 == null)
@@ -156,7 +158,7 @@ namespace VotersEDM.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ncvoter40Exists(long key)
+        private bool ncvoter40Exists(Guid key)
         {
             return db.ncvoter40.Count(e => e.ID == key) > 0;
         }
